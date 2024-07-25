@@ -18,7 +18,7 @@ To get started with this project, you'll need the following:
 
 3. **Ingress Controller**: An Ingress Controller is required to manage and route external traffic into your Kubernetes cluster. Popular options include [Nginx Ingress Controller](https://docs.nginx.com/nginx-ingress-controller/) or [Traefik](https://doc.traefik.io/traefik/providers/kubernetes-ingress/). You can find installation instructions in their respective documentation. This project uses an Nginx Ingress Controller as default.
 
-4. **DNS Configuration**: For local testing with `k8s-load-balancing-demo.local`, you might need to configure your  `/etc/hosts` file or use a local DNS service to map `k8s-load-balancing-demo.local` to the IP address of your Ingress controller.
+4. **DNS Configuration**: For local testing with `k8s-load-balancing-demo.local` as the URL, you need to configure your `/etc/hosts` file or use a local DNS service to map `k8s-load-balancing-demo.local` to the IP address of your Ingress controller.
 
 ## Using Minikube
 
@@ -30,11 +30,10 @@ If you're using Minikube for local development, you can enable the Ingress addon
    ```
 
 2. **Enable Ingress Addon**:
+   To deploy the Nginx Ingress Controller within your Minikube cluster, run:
    ```bash
    minikube addons enable ingress
    ```
-   This command will deploy the Nginx Ingress Controller within your Minikube cluster, making it easier to manage Ingress resources.
-
 4. **Get the Minikube IP**:
 
    To get the Minikube IP address, which will be used in the `etc/hosts` file, run:
@@ -51,6 +50,8 @@ If you're using Minikube for local development, you can enable the Ingress addon
 
 ## Setup
 
+**Important Note**: During the setup process, the order in which you apply the manifests is important. First, apply the ConfigMap to ensure that the configurations are available. Next, deploy the Nginx instances, then expose the service, and finally configure the Ingress. This ensures that all necessary resources are created and properly configured in the correct sequence.
+    
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/your-username/k8s-load-balancing-demo.git
@@ -84,8 +85,6 @@ If you're using Minikube for local development, you can enable the Ingress addon
    kubectl apply -f ingresses/
    ```
    The Ingress configuration provided uses the hostname `k8s-load-balancing-demo.local`. If you need to use a different hostname, you can edit the Ingress manifest files that is inside the `ingresses/` directory and modify the host field in the `etc/hosts` to specify a different hostname according to your needs.
-
-    **Note**: The order in which you apply the manifests is important. First, apply the ConfigMap to ensure that the configurations are available. Next, deploy the Nginx instances, then expose the service, and finally     configure the Ingress. This ensures that all necessary resources are created and properly configured in sequence.
 
 7. **Get the Minikube IP**:
 
