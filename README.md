@@ -94,7 +94,6 @@ If you're using Minikube for local development, you can enable the Ingress addon
    ```bash
    minikube ip
    ```
-   ```
    
 8. **Update Your /etc/hosts File**:
 
