@@ -83,7 +83,7 @@ If you're using Minikube for local development, you can enable the Ingress addon
    ```bash
    kubectl apply -f ingresses/
    ```
-   The Ingress configuration provided uses the hostname test-app.local. If you need to use a different hostname, you can edit the Ingress manifest files in the ingresses/ directory and modify the host field in the        to specify a different hostname according to your needs.
+   The Ingress configuration provided uses the hostname `k8s-load-balancing-demo.local`. If you need to use a different hostname, you can edit the Ingress manifest files that is inside the `ingresses/` directory and modify the host field in the `etc/hosts` to specify a different hostname according to your needs.
 
     **Note**: The order in which you apply the manifests is important. First, apply the ConfigMap to ensure that the configurations are available. Next, deploy the Nginx instances, then expose the service, and finally     configure the Ingress. This ensures that all necessary resources are created and properly configured in sequence.
 
@@ -107,13 +107,13 @@ If you're using Minikube for local development, you can enable the Ingress addon
    ```bash
    <minikube-ip>   k8s-load-balancing-demo.local
    ```
-   Replace <minikube-ip> with the IP address obtained from the minikube ip command.
+   Replace `<minikube-ip>` with the IP address obtained from the `minikube-ip` command.
 
 
 10. **Access the Service Locally**:
-   Now you can access your service using the hostname you specified in the ingress manifest file and /etc/hosts file, for example, http://test-app.local if you use the default configureation. Once set up correctly, refreshing the address will load balance the traffic and redirect you to test-1 and test-2 alternately.
+   Now you can access your service using the hostname you specified in the ingress manifest file and `etc/hosts` file, for example, `http://k8s-load-balancing-demo.local` if you use the default configuration. Once set up correctly, refreshing the address will load balance the traffic and redirect you to `test-1` and `test-2` alternately.
 
 ## Notes
 
 - Ensure you have the necessary permissions and context set up in your Kubernetes cluster.
-- Do not forget to update the hosts file or local DNS to map k8s-load-balancing-demo.local to your Ingress controller's IP.
+- Do not forget to update the hosts file or local DNS to map `k8s-load-balancing-demo.local` to your Ingress controller's IP.
