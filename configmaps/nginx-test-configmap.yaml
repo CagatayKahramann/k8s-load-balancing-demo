@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-test-configmap
+data:
+  test1-index.html: |
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>Test 1</title>
+    </head>
+    <body>
+      <h1>Test 1</h1>
+    </body>
+    </html>
+  test2-index.html: |
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>Test 2</title>
+    </head>
+    <body>
+      <h1>Test 2</h1>
+    </body>
+    </html>
+
