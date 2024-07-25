@@ -101,14 +101,14 @@ If you're using Minikube for local development, you can enable the Ingress addon
    ```bash
    minikube ip
    ```
-
+   
 10. **Update Your /etc/hosts File**:
 
    After retrieving the Minikube IP address and the service URL, update your `/etc/hosts` file to map your service’s hostname to the Minikube IP. Open `/etc/hosts` with a text editor and add a line like this:
    ```bash
    <minikube-ip>   k8s-load-balancing-demo.local
    ```
-   Replace `<minikube-ip>` with the IP address obtained from the minikube ip command. If you edited the default Ingress manifest, change the URL address to the one specified in your Ingress configuration to ensure it    matches the hostname used in your `/etc/hosts` file.
+   Replace `<minikube-ip>` with the IP address obtained from the minikube ip command. If you edited the default Ingress manifest, change the URL address to the one specified in your Ingress configuration to ensure it matches the hostname used in your `/etc/hosts` file.
 
 
 11. **Access the Service Locally**:
