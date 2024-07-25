@@ -16,7 +16,7 @@ To get started with this project, you'll need the following:
 
 2. **Kubectl**: The command-line tool for interacting with Kubernetes. You can install it by following the instructions [here](https://kubernetes.io/docs/tasks/tools/install-kubectl/).
 
-3. **Ingress Controller**: An Ingress Controller is required to manage and route external traffic into your Kubernetes cluster. Popular options include [Nginx Ingress Controller](https://docs.nginx.com/nginx-ingress-controller/) or [Traefik](https://doc.traefik.io/traefik/providers/kubernetes-ingress/). You can find installation instructions in their respective documentation. This project uses an Nginx Ingress Controller as an example.
+3. **Ingress Controller**: An Ingress Controller is required to manage and route external traffic into your Kubernetes cluster. Popular options include [Nginx Ingress Controller](https://docs.nginx.com/nginx-ingress-controller/) or [Traefik](https://doc.traefik.io/traefik/providers/kubernetes-ingress/). You can find installation instructions in their respective documentation. This project uses an Nginx Ingress Controller as default.
 
 4. **DNS Configuration**: For local testing with `k8s-load-balancing-demo.local`, you might need to configure your `/etc/hosts` file or use a local DNS service to map `k8s-load-balancing-demo.local` to the IP address of your Ingress controller.
 
