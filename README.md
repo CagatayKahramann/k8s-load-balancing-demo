@@ -88,21 +88,15 @@ If you're using Minikube for local development, you can enable the Ingress addon
 
    **Note**: The Ingress configuration uses the `nginx.ingress.kubernetes.io/rewrite-target: /` annotation to ensure that requests to `/test1` and `/test2` are rewritten to `/` before reaching the respective services. This is required if your Nginx instances only handle requests at the root path (`/`).
 
-8. **Get the Minikube IP**:
+7. **Get the Minikube IP**:
 
    To get the Minikube IP address, which will be used in the `/etc/hosts` file, run:
    ```bash
    minikube ip
    ```
-
-9. **Get the Minikube IP**:
-
-   To get the Minikube IP address, which will be used in the `/etc/hosts` file, run:
-   ```bash
-   minikube ip
    ```
    
-10. **Update Your /etc/hosts File**:
+8. **Update Your /etc/hosts File**:
 
    After retrieving the Minikube IP address and the service URL, update your `/etc/hosts` file to map your service’s hostname to the Minikube IP. Open `/etc/hosts` with a text editor and add a line like this:
    ```bash
@@ -111,7 +105,7 @@ If you're using Minikube for local development, you can enable the Ingress addon
    Replace `<minikube-ip>` with the IP address obtained from the minikube ip command. If you edited the default Ingress manifest, change the URL address to the one specified in your Ingress configuration to ensure it matches the hostname used in your `/etc/hosts` file.
 
 
-11. **Access the Service Locally**:
+9. **Access the Service Locally**:
    Now you can access your service using the hostname you specified in the ingress manifest file and `etc/hosts` file, for example, `http://k8s-load-balancing-demo.local` if you use the default configuration. Once set up correctly, refreshing the address will load balance the traffic and redirect you to `test-1` and `test-2` alternately.
 
 ## Notes
