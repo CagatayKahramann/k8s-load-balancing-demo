@@ -49,7 +49,7 @@ If you're using Minikube for local development, you can enable the Ingress addon
 
 ## Setup
 
-**Important Note**: During the setup process, the order in which you apply the manifests is important. First, apply the ConfigMap to ensure that the configurations are available. Next, deploy the Nginx instances, then expose the service, and finally configure the Ingress. This ensures that all necessary resources are created and properly configured in the correct sequence. Apply each manifest one by one to ensure proper setup.
+**Important Note**: During the setup process, it is important to apply the manifests in the correct order and one-by-one to ensure proper configuration. First, apply the ConfigMap to ensure that the configurations are available. Next, deploy the Nginx instances, then expose the service, and finally configure the Ingress.This ensures that all necessary resources are created and properly configured in the correct sequence.
     
 1. **Clone the Repository**:
    ```bash
